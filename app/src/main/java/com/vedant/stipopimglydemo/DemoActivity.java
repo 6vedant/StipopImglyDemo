@@ -34,15 +34,19 @@ import ly.img.android.pesdk.assets.sticker.emoticons.StickerPackEmoticons;
 import ly.img.android.pesdk.assets.sticker.shapes.StickerPackShapes;
 import ly.img.android.pesdk.backend.decoder.ImageSource;
 import ly.img.android.pesdk.backend.model.EditorSDKResult;
+import ly.img.android.pesdk.backend.model.config.ImageStickerAsset;
+import ly.img.android.pesdk.backend.model.state.AssetConfig;
 import ly.img.android.pesdk.backend.model.state.LoadSettings;
 import ly.img.android.pesdk.backend.model.state.VideoEditorSaveSettings;
 import ly.img.android.pesdk.backend.model.state.manager.SettingsList;
+import ly.img.android.pesdk.backend.model.state.manager.StateHandler;
 import ly.img.android.pesdk.ui.activity.VideoEditorBuilder;
 import ly.img.android.pesdk.ui.model.state.UiConfigFilter;
 import ly.img.android.pesdk.ui.model.state.UiConfigFrame;
 import ly.img.android.pesdk.ui.model.state.UiConfigOverlay;
 import ly.img.android.pesdk.ui.model.state.UiConfigSticker;
 import ly.img.android.pesdk.ui.model.state.UiConfigText;
+import ly.img.android.pesdk.ui.model.state.UiStateMenu;
 import ly.img.android.pesdk.ui.panels.item.ImageStickerItem;
 import ly.img.android.pesdk.ui.panels.item.StickerCategoryItem;
 import ly.img.android.serializer._3.IMGLYFileWriter;
@@ -54,6 +58,7 @@ public class DemoActivity extends AppCompatActivity implements StipopDelegate {
     StipopImageView stipopImageView;
 
     private static ArrayList<SPSticker> stipopStickers = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,23 +193,27 @@ public class DemoActivity extends AppCompatActivity implements StipopDelegate {
     }
 
     public void addStipopStickersToImgly(SettingsList settingsList) {
-        settingsList.getSettingsModel(UiConfigSticker.class).setStickerLists(
-                StickerPackEmoticons.getStickerCategory(),
-                StickerPackShapes.getStickerCategory()
-        );
+
+        AssetConfig assetConfig = settingsList.getConfig();
+
 
         List<ImageStickerItem> imageStickerItems = new ArrayList<>();
         imageStickerItems.clear();
         UiConfigSticker uiConfigSticker = settingsList.getSettingsModel(UiConfigSticker.class);
         for (SPSticker spSticker : stipopStickers) {
-            ImageStickerItem imageStickerItem = new ImageStickerItem(""+spSticker.getStickerId(), spSticker.getKeyword(), ImageSource.create(Uri.parse(spSticker.getStickerImg())));
+            assetConfig.addAsset(new ImageStickerAsset("stipop" + spSticker.getStickerId(), ImageSource.create(Uri.parse(spSticker.getStickerImg()))));
+            ImageStickerItem imageStickerItem = new ImageStickerItem("stipop" + spSticker.getStickerId(), spSticker.getKeyword(), ImageSource.create(Uri.parse(spSticker.getStickerImg())));
             //uiConfigSticker.addToPersonalStickerList(new ImageStickerItem("id"+spSticker.getStickerId(), spSticker.getKeyword(), ImageSource.create(Uri.parse(spSticker.getStickerImg()))));
             imageStickerItems.add(imageStickerItem);
         }
         StickerCategoryItem stickerCategoryItem = new StickerCategoryItem("stipop", R.string.app_name, ImageSource.create(R.mipmap.ic_sticker_normal), imageStickerItems);
-        uiConfigSticker.setStickerLists(stickerCategoryItem);
+        // uiConfigSticker.setStickerLists(stickerCategoryItem);
 
-
+        settingsList.getSettingsModel(UiConfigSticker.class).setStickerLists(
+                StickerPackEmoticons.getStickerCategory(),
+                StickerPackShapes.getStickerCategory(),
+                stickerCategoryItem
+        );
     }
 
 

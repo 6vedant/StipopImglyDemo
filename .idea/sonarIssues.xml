@@ -3,6 +3,41 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b0b9228cd66bd1b586d59938d60ce591/sticker-9.1.1/jars/classes.jar!/ly/img/android/pesdk/ui/panels/item/PersonalStickerAddItem.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/transforms-3/1029095b27cc6995af1b975cbcdccb34/transformed/jetified-sticker-emoticons-9.1.1/jars/classes.jar!/ly/img/android/pesdk/assets/sticker/emoticons/StickerPackEmoticons.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/transforms-3/4609c1832a065e044262d4fdd74b577c/transformed/jetified-sticker-9.1.1/jars/classes.jar!/ly/img/android/pesdk/ui/model/state/UiConfigSticker.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/transforms-3/a240daa20d20457360b786908ce55caf/transformed/jetified-sticker-shapes-9.1.1/jars/classes.jar!/ly/img/android/pesdk/assets/sticker/shapes/StickerPackShapes.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Repos/zeta-india-android-client/app/build/generated/source/buildConfig/preKitkat/prod/in/zeta/android/BuildConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../StipopArticles/ImglyVideoEditor/pesdk-android-demo/app/src/main/java/com/photoeditorsdk/android/app/KEditorDemoActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/build.gradle">
           <value>
             <set />
@@ -34,6 +69,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/settings.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/app/src/main/java/com/videoeditorsdk/android/app/GlobalApplication.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/app/src/main/java/com/videoeditorsdk/android/app/KVideoEditorDemoActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/app/src/main/java/com/videoeditorsdk/android/app/StipopStickerCategory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../vesdk-android-demo/build.gradle">
           <value>
             <set />
           </value>
